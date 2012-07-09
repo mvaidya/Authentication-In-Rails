@@ -1,0 +1,6 @@
+<%= render :partial=>'shared/jumbo_title', :locals => {:title=>'Log In'} %>
+
+<div class="well jumbotron">
+  <%= link_to "Log in with Twitter", "/auth/twitter", :class=>"btn btn-twitter btn-large" %>
+  <%= link_to "Log in with Facebook", "/auth/facebook", :class=>"btn btn-facebook btn-large" %>
+</div>

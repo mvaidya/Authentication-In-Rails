@@ -1,0 +1,30 @@
+<% if flash[:notice] && flash[:notice] != '' %>
+    <div class="container alert">
+      <a class="close" data-dismiss="alert">×</a>
+      <strong>Notice: </strong><%= flash[:notice] %>
+    </div>
+<% end %>
+<% if flash[:error] && flash[:error] != '' %>
+    <div class="container alert alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <strong>Error: </strong><%= flash[:error] %>
+    </div>
+<% end %>
+<% if flash[:alert] && flash[:alert] != '' %>
+    <div class="container alert alert-error">
+      <a class="close" data-dismiss="alert">×</a>
+      <strong>Error: </strong><%= flash[:alert] %>
+    </div>
+<% end %>
+<% if flash[:success] && flash[:success] != '' %>
+    <div class="container alert alert-success">
+      <a class="close" data-dismiss="alert">×</a>
+      <strong>Success: </strong><%= flash[:success] %>
+    </div>
+<% end %>
+<% if flash[:info] && flash[:info] != '' %>
+    <div class="container alert  alert-info">
+      <a class="close" data-dismiss="alert">×</a>
+      <strong>Info: </strong><%= flash[:info] %>
+    </div>
+<% end %>

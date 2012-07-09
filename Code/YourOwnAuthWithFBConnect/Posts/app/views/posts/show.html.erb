@@ -1,0 +1,17 @@
+<h1><%= @post.title %></h1>
+
+<h2><small><%= @post.user.name %></small></h2>
+
+<p>
+  <span class="label"><%= distance_of_time_in_words_to_now(@post.created_at, true) %></span>
+</p>
+
+
+<p>
+  <%= @post.description %>
+</p>
+
+<% if current_user == @post.user %>
+    <%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-primary' %>
+<% end %>
+<%= link_to 'Back', posts_path, :class => 'btn btn-danger' %>

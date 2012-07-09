@@ -1,0 +1,12 @@
+development:
+  domain: localhost:3000
+  app_id: __YOUR_APP_ID__
+  app_secret: __YOUR_APP_SECRET__
+  app_ns: __YOUR_APP_NAMESPACE__
+  permissions: __PERMISSIONS_LIST_COMMA_SEPERATED__
+
+test:
+  domain: test.host
+
+production:
+  domain: example.com

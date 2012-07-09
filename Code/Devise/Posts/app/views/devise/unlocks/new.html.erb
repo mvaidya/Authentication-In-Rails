@@ -1,0 +1,17 @@
+<%= render :partial => 'shared/jumbo_title', :locals => {:title => 'Resend unlock instructions'} %>
+
+<div class="well">
+<%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :email, :required => true %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Resend unlock instructions" %>
+  </div>
+<% end %>
+
+<%= render "links" %>
+</div>

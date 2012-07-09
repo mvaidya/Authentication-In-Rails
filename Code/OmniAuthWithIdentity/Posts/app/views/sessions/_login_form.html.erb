@@ -1,0 +1,22 @@
+<%= form_tag '/auth/identity/callback', :class=>'simple_form form-vertical' do %>
+    <div class="control-group auth_key required">
+      <%= label_tag :auth_key, 'Email <abbr title="required">*</abbr>'.html_safe, :class=>'email required control-label' %>
+
+      <div class="controls">
+        <%= text_field_tag :auth_key, params[:email], :size=>50 %>
+      </div>
+    </div>
+
+    <div class="control-group password required">
+      <%= label_tag :password, 'Password <abbr title="required">*</abbr>'.html_safe, :class=>'password required control-label' %>
+      <div class="controls">
+        <%= password_field_tag :password, params[:password], :size=>50, :type=>'password' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= submit_tag "Log in", :class=>'btn btn-primary btn-large' %>
+      <%= link_to 'Cancel', :back, :class => 'btn btn-danger btn-mini' %>
+    </div>
+<% end %>
+

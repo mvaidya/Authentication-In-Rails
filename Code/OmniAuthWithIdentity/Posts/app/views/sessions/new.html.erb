@@ -1,0 +1,25 @@
+<%= render :partial=>'shared/jumbo_title', :locals => {:title=>'Log In'} %>
+
+<div class="well">
+  <div class='row-fluid'>
+    <div class="span4">
+      <p>
+        <%= link_to "Log in with Twitter", "/auth/twitter", :class=>"btn btn-twitter btn-large" %>
+      </p>
+      <p>
+        <%= link_to "Log in with Facebook", "/auth/facebook", :class=>"btn btn-facebook btn-large" %>
+      </p>
+
+    </div>
+    <div class="span1">OR</div>
+    <div class="span6">
+      <%= render 'login_form' %>
+    </div>
+  </div>
+
+
+  <%#
+      ORIGINAL LOGIN URL =  <%= link_to 'Login', "/auth/identity" % > with a password.
+      ORIGINAL REGISTER URL = <%= link_to "Create an account", '/auth/identity/register' % > or
+  %>
+</div>

@@ -1,0 +1,13 @@
+development:
+  facebook:
+    app_id: "_YOUR_APP_ID__"
+    app_secret: "_YOUR_APP_SECRET__"
+    app_ns: "_YOUR_APP_NAMESPACE__"
+  twitter:
+    consumer_key: "_YOUR_CONSUMER_KEY__"
+    consumer_secret: "_YOUR_CONSUMER_SECRET__"
+test:
+  domain: test.host
+
+production:
+  domain: example.com

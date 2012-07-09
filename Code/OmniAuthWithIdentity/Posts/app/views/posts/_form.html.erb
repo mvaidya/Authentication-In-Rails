@@ -1,0 +1,9 @@
+<%= simple_form_for(@post, :html=>{:class => 'well form-horizontal'}) do |f| %>
+    <%= f.input :title, :input_html => {:class => 'input-xlarge'} %>
+    <%= f.input :description, :input_html => {:class => 'input-xlarge', :rows=>5} %>
+
+    <div class="form-actions">
+      <%= f.submit "Submit", :class => 'btn btn-primary btn-large' %>
+      <%= link_to 'Cancel', posts_path, :class => 'btn btn-danger btn-mini' %>
+    </div>
+<% end %>

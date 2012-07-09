@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posts</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+</head>
+<body>
+
+<%= render :partial => 'shared/header' %>
+
+<div id="wrap">
+  <div id="main" class="clear-top">
+    <%= render :partial => 'shared/flash_notices' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => 'shared/footer' %>
+
+</body>
+</html>

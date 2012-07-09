@@ -1,0 +1,16 @@
+<%= render :partial=>'shared/jumbo_title', :locals => {:title=>'All Posts', :description => 'This page lists all posts on this website', :action => link_to('New Post', new_post_path, :class=>'btn btn-success')} %>
+
+<ul class="unstyled">
+<% @posts.each do |post| %>
+      <li>
+        <section>
+          <h2><%= link_to post.title, post %><small> <%= distance_of_time_in_words_to_now(post.created_at, true) %></small></h2>
+          <p><%= truncate(post.description, :length => 250, :omission => "... (continued)") %></p>
+          <p>
+            <%= link_to 'Edit', edit_post_path(post), :class=>'btn btn-primary btn-mini' %>
+            <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete , class: 'btn btn-danger btn-mini'%>
+          </p>
+        </section>
+      </li>
+<% end %>
+</ul>

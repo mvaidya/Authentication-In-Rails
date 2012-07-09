@@ -1,0 +1,49 @@
+<%= render :partial => 'shared/jumbo_title', :locals => {:title => 'Create an Account'} %>
+
+<div class="well">
+  <%= form_tag '/auth/identity/register', :class => 'simple_form form-horizontal' do %>
+      <% if @identity && @identity.errors.any? %>
+          <div class="alert alert-error">
+            <h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
+            <ul>
+              <% @identity.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+      <div class="control-group email required">
+        <%= label_tag :email, 'Email <abbr title="required">*</abbr>'.html_safe, :class => 'email required control-label' %>
+        <div class="controls">
+          <%= text_field_tag :email, @identity.try(:email), :size => 50 %>
+        </div>
+      </div>
+
+      <div class="control-group name required">
+        <%= label_tag :name, 'Name <abbr title="required">*</abbr>'.html_safe, :class => 'email required control-label' %>
+        <div class="controls">
+          <%= text_field_tag :name, @identity.try(:name), :size => 50 %>
+        </div>
+      </div>
+
+      <div class="control-group password required">
+        <%= label_tag :password, 'Password <abbr title="required">*</abbr>'.html_safe, :class => 'password required control-label' %>
+        <div class="controls">
+          <%= password_field_tag :password, "", :size => 50, :type => 'password' %>
+        </div>
+      </div>
+
+      <div class="control-group password_confirmation required">
+        <%= label_tag :password_confirmation, 'Confirm Password <abbr title="required">*</abbr>'.html_safe, :class => 'password required control-label' %>
+        <div class="controls">
+          <%= password_field_tag :password_confirmation, "", :size => 50, :type => 'password' %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "Sign up", :class => 'btn btn-primary btn-large' %>
+        <%= link_to 'Cancel', root_url, :class => 'btn btn-danger btn-mini' %>
+      </div>
+  <% end %>
+</div>

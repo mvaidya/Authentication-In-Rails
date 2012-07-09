@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+
+<p>
+  <span class="label"><%= distance_of_time_in_words_to_now(@post.created_at, true) %></span>
+</p>
+
+
+<p>
+  <%= @post.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post), :class=>'btn btn-primary' %>
+<%= link_to 'Back', posts_path, :class => 'btn btn-danger' %>

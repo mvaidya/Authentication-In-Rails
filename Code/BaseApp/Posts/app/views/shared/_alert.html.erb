@@ -1,0 +1,11 @@
+<% alert_type = 'error' if local_assigns[:alert_type].nil? %>
+<% alert_heading = nil if local_assigns[:alert_heading].nil? %>
+<% alert_message = '' if local_assigns[:alert_message].nil? %>
+
+<div class="alert alert-<%= alert_type %>">
+  <% if !alert_heading.blank? %>
+      <h4 class="alert-heading"><%= alert_heading %></h4>
+  <% end %>
+
+  <%= alert_message %>
+</div>
