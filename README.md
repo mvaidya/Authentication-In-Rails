@@ -17,3 +17,5 @@ I have developed all these examples using Rails 3.2 and Ruby 1.9.3 on Windows 7 
 <li>OmniAuth (Facebook + Twitter + Identity)</li>
 <li>Devise (+ Omniauthable, example includes Facebook and Twitter)</li>
 </ul>
+
+
