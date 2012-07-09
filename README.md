@@ -12,13 +12,9 @@ Acknowledgements: Huge Thanks to Ryan Bates from railscasts.com for helping me t
 
 
 Your Own Auth (Authentication from Scratch)
-
 Your Own Auth With Facebook Connect
-
 OmniAuth (Facebook + Twitter)
-
 OmniAuth (Facebook + Twitter + Identity)
-
 Devise (+ Omniauthable, example includes Facebook and Twitter)
 
 
