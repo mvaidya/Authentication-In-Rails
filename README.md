@@ -1,10 +1,5 @@
-Developer-Love
-==============
-
-My Developer Sandbox
-
-
-
+Authentication in Rails
+=========================
 
 Basic HTTP Auth in Rails
 
