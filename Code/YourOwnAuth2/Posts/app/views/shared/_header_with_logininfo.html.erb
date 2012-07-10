@@ -1,0 +1,74 @@
+<header>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%# .btn-navbar is used as the toggle for collapsed navbar content %>
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
+        <%# Be sure to leave the brand out there if you want it shown %>
+        <%= link_to t('brand'), root_path, :class => 'brand' %>
+
+        <%# Everything you want hidden at 940px or less, place within here %>
+        <div class="nav-collapse">
+          <%# .nav, .navbar-search, .navbar-form, etc %>
+          <ul class="nav">
+            <% if !user_signed_in? %>
+                <li<%= controller_name == 'home' ? " class='active'" : "" %>>
+                  <%= link_to t('header.home'), root_path %>
+                </li>
+                <li<%= controller_name == 'gallery' ? " class='active'" : "" %>>
+                  <%= link_to t('header.public_gallery'), gallery_path %>
+                </li>
+            <% else %>
+                <li<%= controller_name == 'gallery' ? " class='active'" : "" %>>
+                  <%= link_to t('header.public_gallery'), gallery_path %>
+                </li>
+                <li<%= controller_name == 'users' ? " class='active'" : "" %>>
+                  <%= link_to t('header.gallery'), friendly_user_path(current_user) %>
+                </li>
+                <li<%= controller_name == 'widgets' ? " class='active'" : "" %>>
+                  <%= link_to t('header.widgets'), widgets_path %>
+                </li>
+                <li<%= controller_name == 'themes' ? " class='active'" : "" %>>
+                  <%= link_to t('header.themes'), themes_path %>
+                </li>
+                <li<%= controller_name == 'networks' ? " class='active'" : "" %>>
+                  <%= link_to t('header.networks'), networks_path %>
+                </li>
+            <% end %>
+          </ul>
+          <ul class="nav pull-right">
+            <li>
+              <%= link_to t('header.faq'), faqs_path %>
+            </li>
+            <% if !user_signed_in? %>
+            <li>
+              <%= link_to t('header.sign_up'), new_user_registration_path %>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t('header.sign_in') %>
+                <b class="caret"></b>
+              </a>
+              <div class="dropdown-menu">
+                <%= render :partial => "users/sessions/custom_login_form" %>
+              </div>
+            </li>
+            <% else %>
+                <li>
+                  <%= link_to t("header.address", :name => current_user.name), edit_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to t('header.sign_out'), destroy_user_session_path, :method => :delete %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

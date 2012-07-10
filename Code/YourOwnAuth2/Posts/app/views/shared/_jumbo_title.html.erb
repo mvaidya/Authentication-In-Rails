@@ -1,0 +1,17 @@
+<% title = nil if local_assigns[:title].nil? %>
+<% description = nil if local_assigns[:description].nil? %>
+<% action = nil if local_assigns[:action].nil? %>
+
+<div class="jumbotron subhead">
+  <h1>
+    <%= title %>
+  </h1>
+  <% if description %>
+    <p class="lead"><%= description %></p>
+  <% end %>
+</div>
+<% if action %>
+    <%= action %>
+<% end %>
+
+<hr />
