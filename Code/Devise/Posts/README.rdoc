@@ -6,14 +6,39 @@ This app builds authentication using Devise on top of the BaseApp included in th
 
 == Getting Started
 
+== Devise
+
+Sample code that uses Devise gem for authentication.
+
+This app builds authentication using Devise on top of the BaseApp included in this repository
+
+== Getting Started
+
 1. Install MySql or if you are using some other database, make appropriate change to database.yml and Gemfile
 
-2. On the command prompt
+2. Create a Facebook App on https://developers.facebook.com/apps
+
+3. Create a Twitter App on https://dev.twitter.com/apps
+
+4. Specify your Facebook app_id and app_secret in app_config.yml
+
+5. Specify your Twitter consumer_key and consumer_secret in app_config.yml
+
+6. On the command prompt
        cd <to your app directory>
        bundle install
        rake db:migrate
        rake db:seed
        rails s
+
+== Resources
+
+* Base App: link:https://github.com/mvaidya/Authentication-In-Rails/tree/master/Code/BaseApp/Posts
+* Devise: https://github.com/plataformatec/devise/
+* Devise Wiki: https://github.com/plataformatec/devise/wiki/_pages
+* RailsCasts: http://railscasts.com/episodes?utf8=%E2%9C%93&search=devise
+
+
 
 == Resources
 
