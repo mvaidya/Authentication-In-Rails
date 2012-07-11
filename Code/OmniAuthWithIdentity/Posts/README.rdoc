@@ -8,7 +8,15 @@ This app adds omniauth-identity strategy on top of the OmniAuth app included in 
 
 1. Install MySql or if you are using some other database, make appropriate change to database.yml and Gemfile
 
-2. On the command prompt
+2. Create a Facebook App on https://developers.facebook.com/apps
+
+3. Create a Twitter App on https://dev.twitter.com/apps
+
+4. Specify your Facebook app_id and app_secret in app_config.yml
+
+5. Specify your Twitter consumer_key and consumer_secret in app_config.yml
+
+6. On the command prompt
        cd <to your app directory>
        bundle install
        rake db:migrate
